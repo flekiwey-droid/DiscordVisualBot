@@ -1,0 +1,6 @@
+{
+  "name": "VisualDiscordBot",
+  "description": "A visual scripting platform for building Discord bots using nodes and logic flows.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["Visual Scripting", "Discord Bot Logic", "Node-based Editor"]
+}

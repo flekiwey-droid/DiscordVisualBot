@@ -1,0 +1,126 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} { allow read, write: if false; }
+
+    function isValidId(id) { 
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$'); 
+    }
+    
+    function incoming() { return request.resource.data; }
+    function existing() { return resource.data; }
+    function isSignedIn() { return request.auth != null; }
+    function isOwner(userId) { return request.auth.uid == userId; }
+
+    // Users Collection
+    function isValidUser(data) {
+      return data.keys().hasAll(['userId', 'botToken', 'hasSetupTemplates', 'createdAt', 'updatedAt']) 
+             && data.keys().size() == 5
+             && data.userId is string && data.userId.size() <= 128
+             && data.botToken is string && data.botToken.size() <= 200
+             && data.hasSetupTemplates is bool
+             && data.createdAt == request.time
+             && data.updatedAt == request.time;
+    }
+    
+    function isValidUserUpdate(data) {
+       return data.userId is string && data.userId.size() <= 128
+            && data.botToken is string && data.botToken.size() <= 200
+            && data.hasSetupTemplates is bool
+            && data.createdAt is timestamp
+            && data.updatedAt == request.time;
+    }
+
+    match /users/{userId} {
+      allow get: if isSignedIn() && isOwner(userId) && isValidId(userId);
+      allow list: if false; // No list querying across all users
+
+      allow create: if isSignedIn() 
+                    && isOwner(userId) 
+                    && incoming().userId == request.auth.uid
+                    && isValidUser(incoming());
+
+      allow update: if isSignedIn() 
+                    && isOwner(userId) 
+                    && isValidId(userId)
+                    && isValidUserUpdate(incoming())
+                    && incoming().userId == existing().userId
+                    && incoming().createdAt == existing().createdAt
+                    && (
+                      (incoming().diff(existing()).affectedKeys().hasOnly(['botToken', 'updatedAt'])) ||
+                      (incoming().diff(existing()).affectedKeys().hasOnly(['hasSetupTemplates', 'updatedAt'])) ||
+                      (incoming().diff(existing()).affectedKeys().hasOnly(['botToken', 'hasSetupTemplates', 'updatedAt']))
+                    );
+
+      allow delete: if isSignedIn() && isOwner(userId) && isValidId(userId);
+    }
+
+    // Modules Collection
+    function isValidModule(data) {
+      return data.keys().hasAll(['userId', 'name', 'type', 'nodes', 'edges', 'createdAt', 'updatedAt'])
+             && data.userId is string && data.userId.size() <= 128
+             && data.name is string && data.name.size() > 0 && data.name.size() <= 100
+             && data.type is string && data.type in ['command', 'event', 'message', 'music', 'ai', 'ticket']
+             && data.nodes is string && data.nodes.size() <= 1048576 // up to 1MB
+             && data.edges is string && data.edges.size() <= 1048576 
+             && data.createdAt is timestamp
+             && data.updatedAt is timestamp;
+    }
+
+    function isValidModuleUpdate(data) {
+      return data.userId is string && data.userId.size() <= 128
+             && data.name is string && data.name.size() > 0 && data.name.size() <= 100
+             && data.type is string && data.type in ['command', 'event', 'message', 'music', 'ai', 'ticket']
+             && data.nodes is string && data.nodes.size() <= 1048576
+             && data.edges is string && data.edges.size() <= 1048576
+             && data.createdAt is timestamp
+             && data.updatedAt is timestamp;
+    }
+
+    match /modules/{moduleId} {
+      allow get: if isSignedIn() && existing().userId == request.auth.uid && isValidId(moduleId);
+      allow list: if isSignedIn() && resource.data.userId == request.auth.uid;
+      
+      allow create: if isSignedIn()
+                    && isValidId(moduleId)
+                    && incoming().userId == request.auth.uid
+                    && isValidModule(incoming());
+                    
+      allow update: if isSignedIn()
+                    && isValidId(moduleId)
+                    && existing().userId == request.auth.uid
+                    && incoming().userId == existing().userId
+                    && incoming().createdAt == existing().createdAt
+                    && isValidModuleUpdate(incoming())
+                    && incoming().diff(existing()).affectedKeys().hasOnly(['name', 'type', 'nodes', 'edges', 'updatedAt']);
+                    
+      allow delete: if isSignedIn() && existing().userId == request.auth.uid && isValidId(moduleId);
+    }
+
+    // Transcripts Collection
+    function isValidTranscript(data) {
+      return data.keys().hasAll(['ticketId', 'creatorId', 'guildId', 'messages', 'rating', 'closedAt'])
+             && data.ticketId is string
+             && data.creatorId is string
+             && data.guildId is string
+             && data.messages is list
+             && data.rating is number;
+    }
+
+    match /transcripts/{transcriptId} {
+      allow read, write: if true;
+    }
+
+    // Audit Logs
+    match /audit_logs/{logId} {
+      allow read, write: if true;
+    }
+
+    // Ticket Sessions
+    match /ticket_sessions/{sessionId} {
+      allow read, write: if true;
+    }
+  }
+}
+

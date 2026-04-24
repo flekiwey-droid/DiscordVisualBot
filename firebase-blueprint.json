@@ -1,0 +1,91 @@
+{
+  "entities": {
+    "User": {
+      "title": "User Profile",
+      "description": "User preferences and VisualDiscordBot configuration",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "botToken": { "type": "string" },
+        "hasSetupTemplates": { "type": "boolean" },
+        "createdAt": { "type": "number", "description": "Server timestamp" },
+        "updatedAt": { "type": "number", "description": "Server timestamp" }
+      },
+      "required": ["userId", "botToken", "hasSetupTemplates", "createdAt", "updatedAt"]
+    },
+    "Module": {
+      "title": "Bot Module",
+      "description": "A visual code module created by the user",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "name": { "type": "string", "description": "e.g., Simple Command, Ticket System" },
+        "type": { "type": "string", "enum": ["command", "event", "message", "music", "ai", "ticket"] },
+        "nodes": { "type": "string", "description": "JSON string of nodes" },
+        "edges": { "type": "string", "description": "JSON string of edges" },
+        "createdAt": { "type": "number", "description": "Server timestamp" },
+        "updatedAt": { "type": "number", "description": "Server timestamp" }
+      },
+      "required": ["userId", "name", "type", "nodes", "edges", "createdAt", "updatedAt"]
+    },
+    "Transcript": {
+      "title": "Ticket Transcript",
+      "description": "Captured messages and feedback from a closed ticket",
+      "type": "object",
+      "properties": {
+        "ticketId": { "type": "string" },
+        "creatorId": { "type": "string" },
+        "guildId": { "type": "string" },
+        "messages": { "type": "array" },
+        "rating": { "type": "number" },
+        "closedAt": { "type": "number" }
+      }
+    },
+    "AuditLog": {
+      "title": "Security Audit Log",
+      "description": "Records every access to sensitive data",
+      "type": "object",
+      "properties": {
+        "staffId": { "type": "string" },
+        "action": { "type": "string" },
+        "details": { "type": "string" },
+        "timestamp": { "type": "number" }
+      }
+    },
+    "TicketSession": {
+      "title": "Temporary Access Session",
+      "description": "One hour session for staff to view transcripts",
+      "type": "object",
+      "properties": {
+        "sessionId": { "type": "string" },
+        "staffId": { "type": "string" },
+        "ticketId": { "type": "string" },
+        "reason": { "type": "string" },
+        "passwordHash": { "type": "string" },
+        "expiresAt": { "type": "number" }
+      }
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/User" },
+      "description": "Stores user bot data."
+    },
+    "/modules/{moduleId}": {
+      "schema": { "$ref": "#/entities/Module" },
+      "description": "Stores modules created by the user."
+    },
+    "/transcripts/{transcriptId}": {
+      "schema": { "$ref": "#/entities/Transcript" },
+      "description": "Secure storage for closed tickets."
+    },
+    "/audit_logs/{logId}": {
+      "schema": { "$ref": "#/entities/AuditLog" },
+      "description": "Immutable security logs."
+    },
+    "/ticket_sessions/{sessionId}": {
+      "schema": { "$ref": "#/entities/TicketSession" },
+      "description": "Temporary session keys for access."
+    }
+  }
+}

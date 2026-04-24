@@ -1,20 +1,74 @@
+# 🤖 DiscordVisualBot
+
 <div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+
+[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)](https://react.dev)
+[![Discord.js](https://img.shields.io/badge/Discord.js-14.26-5865F2?logo=discord)](https://discord.js.org)
+[![Vite](https://img.shields.io/badge/Vite-6-646CFF?logo=vite)](https://vitejs.dev)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.8-3178C6?logo=typescript)](https://typescriptlang.org)
+[![Firebase](https://img.shields.io/badge/Firebase-12-FFCA28?logo=firebase)](https://firebase.google.com)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
+**Crea bots de Discord profesionales sin escribir una sola línea de código.**
+
+[Demo en vivo](https://ai.studio/apps/bb3a2972-da6a-4ae5-ae9c-47ca04483aad) · [Reportar Bug](https://github.com/flekiwey-droid/DiscordVisualBot/issues) · [Solicitar Feature](https://github.com/flekiwey-droid/DiscordVisualBot/issues)
+
 </div>
 
-# Run and deploy your AI Studio app
+---
 
-This contains everything you need to run your app locally.
+## ✨ ¿Qué es DiscordVisualBot?
 
-View your app in AI Studio: https://ai.studio/apps/bb3a2972-da6a-4ae5-ae9c-47ca04483aad
+DiscordVisualBot es una **plataforma no-code** que te permite diseñar, configurar y desplegar bots de Discord completos usando un **editor visual basado en nodos**. En lugar de programar comandos manualmente, simplemente arrastras y conectas bloques de lógica como si fuera un diagrama de flujo.
 
-## Run Locally
+### 🎯 Características principales
 
-**Prerequisites:**  Node.js
+| Característica | Descripción |
+|----------------|-------------|
+| 🧩 **Editor Visual** | Interfaz drag-and-drop con React Flow para crear lógica de bot sin código |
+| 🎵 **Sistema de Música** | Reproductor completo con Discord Player 7 (play, skip, stop, colas) |
+| 🎫 **Tickets de Soporte** | Sistema completo con transcripciones, estados visuales y encuestas DM |
+| 🗣️ **Asistente de Voz IA** | Integración con Gemini Live para conversaciones por voz en canales de Discord |
+| 🔨 **Moderación** | Timeout, kick, ban, gestión de roles y canales |
+| 📊 **Auditoría** | Portal web protegido para revisar transcripts de tickets |
+| 🔐 **Autenticación** | Login seguro con Firebase Auth |
+| ⚡ **Despliegue Instantáneo** | Un clic para encender tu bot en Discord |
 
+---
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## 🖼️ Capturas de pantalla
+
+### Editor Visual de Flujos
+![Editor Visual](https://kimi-web-img.moonshot.cn/img/discord-bot-engine.github.io/435d86dce26115de5a80a1a3edc5d1a2d757cd83.webp)
+*Arrastra nodos, conecta la lógica y personaliza cada acción del bot*
+
+### Panel de Control
+![Dashboard](https://kimi-web-img.moonshot.cn/img/mir-s3-cdn-cf.behance.net/33e342ec869269b5dd1634e89c0744d7e6dcc0f3.png)
+*Gestiona tus módulos, monitorea el estado del bot y controla el AI Voice Bridge*
+
+### Sistema de Tickets
+![Tickets](https://kimi-web-img.moonshot.cn/img/ticketsbot.org/50459bcb95da9caa5a2783de609dbb8511098e93.webp)
+*Transcripciones automáticas, encuestas de satisfacción y portal de auditoría*
+
+### Constructor de Embeds
+![Embeds](https://kimi-web-img.moonshot.cn/img/raw.githubusercontent.com/4a1365d0c3b7bc313e47662f47263fd3f4ba07c9.png)
+*Crea mensajes embed ricos con previsualización en tiempo real*
+
+---
+
+## 🚀 Demo Rápida
+
+```bash
+# 1. Clonar el repositorio
+git clone https://github.com/flekiwey-droid/DiscordVisualBot.git
+cd DiscordVisualBot
+
+# 2. Instalar dependencias
+npm install
+
+# 3. Configurar variables de entorno
+cp .env.example .env.local
+# Editar .env.local con tus credenciales
+
+# 4. Iniciar servidor de desarrollo
+npm run dev

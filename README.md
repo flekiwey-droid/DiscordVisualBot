@@ -43,10 +43,8 @@ DiscordVisualBot es una **plataforma no-code** que te permite diseñar, configur
 
 *Arrastra nodos, conecta la lógica y personaliza cada acción del bot*
 
-https://i.ibb.co/cSw0hB29/Screenshot-2026-04-24-15-47-38-645-com-android-chrome-edit.jpg
-
 ### Panel de Control
-![Dashboard](https://kimi-web-img.moonshot.cn/img/mir-s3-cdn-cf.behance.net/33e342ec869269b5dd1634e89c0744d7e6dcc0f3.png)
+![Dashboard](https://i.ibb.co/cSw0hB29/Screenshot-2026-04-24-15-47-38-645-com-android-chrome-edit.jpg)
 *Gestiona tus módulos, monitorea el estado del bot y controla el AI Voice Bridge*
 
 ### Sistema de Tickets

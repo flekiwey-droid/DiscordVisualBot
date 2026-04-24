@@ -11,7 +11,7 @@
 
 **Crea bots de Discord profesionales sin escribir una sola línea de código.**
 
-[Demo en vivo](https://ai.studio/apps/bb3a2972-da6a-4ae5-ae9c-47ca04483aad) · [Reportar Bug](https://github.com/flekiwey-droid/DiscordVisualBot/issues) · [Solicitar Feature](https://github.com/flekiwey-droid/DiscordVisualBot/issues)
+[Demo en vivo](https://ais-pre-ne2kzjzdaf6cud5tsefaip-491850047701.europe-west2.run.app) · [Reportar Bug](https://github.com/flekiwey-droid/DiscordVisualBot/issues) · [Solicitar Feature](https://github.com/flekiwey-droid/DiscordVisualBot/issues)
 
 </div>
 
@@ -39,7 +39,7 @@ DiscordVisualBot es una **plataforma no-code** que te permite diseñar, configur
 ## 🖼️ Capturas de pantalla
 
 ### Editor Visual de Flujos
-![Editor Visual](https://kimi-web-img.moonshot.cn/img/discord-bot-engine.github.io/435d86dce26115de5a80a1a3edc5d1a2d757cd83.webp)
+![Editor Visual](ahttps://i.ibb.co/V0CMFQg1/Screenshot-2026-04-24-15-47-04-359-com-android-chrome-edit.jpg)
 *Arrastra nodos, conecta la lógica y personaliza cada acción del bot*
 
 ### Panel de Control

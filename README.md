@@ -11,7 +11,7 @@
 
 **Crea bots de Discord profesionales sin escribir una sola línea de código.**
 
-[Demo en vivo](https://ais-pre-ne2kzjzdaf6cud5tsefaip-491850047701.europe-west2.run.app) · [Reportar Bug](https://github.com/flekiwey-droid/DiscordVisualBot/issues) · [Solicitar Feature](https://github.com/flekiwey-droid/DiscordVisualBot/issues)
+[Demo en vivo](https://ais-pre-ne2kzjzdaf6cud5tsefaip-491850047701.europe-west2.run.app) · [Reportar Bug](https://github.com/flekiwey-droid/DiscordVisualBot/issues) · [Solicitar cambios o funciones](https://github.com/flekiwey-droid/DiscordVisualBot/issues)
 
 </div>
 
@@ -39,8 +39,7 @@ DiscordVisualBot es una **plataforma no-code** que te permite diseñar, configur
 ## 🖼️ Capturas de pantalla
 
 ### Editor Visual de Flujos
-![Editor Visual](https://i.ibb.co/V0CMFQg1/Screenshot-2026-04-24-15-47-04-359-com-android-chrome-edit.jpg)
-
+![Editor Visual](https://i.ibb.co/DPMwB89J/Screenshot-2026-04-24-15-47-04-359-com-android-chrome-edit.jpg)
 *Arrastra nodos, conecta la lógica y personaliza cada acción del bot*
 
 ### Panel de Control
@@ -48,11 +47,11 @@ DiscordVisualBot es una **plataforma no-code** que te permite diseñar, configur
 *Gestiona tus módulos, monitorea el estado del bot y controla el AI Voice Bridge*
 
 ### Sistema de Tickets
-![Tickets](https://kimi-web-img.moonshot.cn/img/ticketsbot.org/50459bcb95da9caa5a2783de609dbb8511098e93.webp)
+![Tickets](https://i.ibb.co/Pz4PpFLC/Screenshot-2026-04-24-15-49-35-896-com-android-chrome-edit.jpg)
 *Transcripciones automáticas, encuestas de satisfacción y portal de auditoría*
 
 ### Constructor de Embeds
-![Embeds](https://kimi-web-img.moonshot.cn/img/raw.githubusercontent.com/4a1365d0c3b7bc313e47662f47263fd3f4ba07c9.png)
+![Embeds](https://i.ibb.co/JRh9SKsm/Screenshot-2026-04-24-15-51-17-589-com-android-chrome-edit.jpg)
 *Crea mensajes embed ricos con previsualización en tiempo real*
 
 ---

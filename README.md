@@ -39,8 +39,11 @@ DiscordVisualBot es una **plataforma no-code** que te permite diseñar, configur
 ## 🖼️ Capturas de pantalla
 
 ### Editor Visual de Flujos
-![Editor Visual](ahttps://i.ibb.co/V0CMFQg1/Screenshot-2026-04-24-15-47-04-359-com-android-chrome-edit.jpg)
+![Editor Visual](https://i.ibb.co/V0CMFQg1/Screenshot-2026-04-24-15-47-04-359-com-android-chrome-edit.jpg)
+
 *Arrastra nodos, conecta la lógica y personaliza cada acción del bot*
+
+https://i.ibb.co/cSw0hB29/Screenshot-2026-04-24-15-47-38-645-com-android-chrome-edit.jpg
 
 ### Panel de Control
 ![Dashboard](https://kimi-web-img.moonshot.cn/img/mir-s3-cdn-cf.behance.net/33e342ec869269b5dd1634e89c0744d7e6dcc0f3.png)

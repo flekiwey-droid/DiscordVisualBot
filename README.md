@@ -1,74 +1,310 @@
-# 🤖 DiscordVisualBot
+# DiscordVisualBot
 
-<div align="center">
+<p align="center">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="80" alt="DiscordVisualBot" />
+</p>
 
-[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)](https://react.dev)
-[![Discord.js](https://img.shields.io/badge/Discord.js-14.26-5865F2?logo=discord)](https://discord.js.org)
-[![Vite](https://img.shields.io/badge/Vite-6-646CFF?logo=vite)](https://vitejs.dev)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.8-3178C6?logo=typescript)](https://typescriptlang.org)
-[![Firebase](https://img.shields.io/badge/Firebase-12-FFCA28?logo=firebase)](https://firebase.google.com)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+<h1 align="center">DiscordVisualBot</h1>
 
-**Crea bots de Discord profesionales sin escribir una sola línea de código.**
+<p align="center">
+  <strong>Crea bots de Discord profesionales sin escribir una sola linea de codigo.</strong>
+</p>
 
-[Demo en vivo](https://ais-pre-ne2kzjzdaf6cud5tsefaip-491850047701.europe-west2.run.app) · [Reportar Bug](https://github.com/flekiwey-droid/DiscordVisualBot/issues) · [Solicitar cambios o funciones](https://github.com/flekiwey-droid/DiscordVisualBot/issues)
-
-</div>
+<p align="center">
+  <a href="https://ais-pre-ne2kzjzdaf6cud5tsefaip-491850047701.europe-west2.run.app" target="_blank">
+    <img src="https://img.shields.io/badge/Demo-en%20vivo-5865F2?style=for-the-badge&logo=google-cloud&logoColor=white" alt="Demo en vivo" />
+  </a>
+  <a href="https://github.com/flekiwey-droid/DiscordVisualBot/issues" target="_blank">
+    <img src="https://img.shields.io/badge/Issues-Reportar%20Bug-EB459E?style=for-the-badge&logo=github&logoColor=white" alt="Reportar Bug" />
+  </a>
+  <a href="https://github.com/flekiwey-droid/DiscordVisualBot/issues" target="_blank">
+    <img src="https://img.shields.io/badge/Feature-Solicitar%20Funcion-FEE75C?style=for-the-badge&logo=github&logoColor=black" alt="Solicitar funcion" />
+  </a>
+  <img src="https://img.shields.io/badge/version-0.0.0-57F287?style=for-the-badge" alt="Version" />
+  <img src="https://img.shields.io/badge/license-MIT-FAA61A?style=for-the-badge" alt="License" />
+</p>
 
 ---
 
-## ✨ ¿Qué es DiscordVisualBot?
+## Tabla de Contenidos
 
-DiscordVisualBot es una **plataforma no-code** que te permite diseñar, configurar y desplegar bots de Discord completos usando un **editor visual basado en nodos**. En lugar de programar comandos manualmente, simplemente arrastras y conectas bloques de lógica como si fuera un diagrama de flujo.
+- [Descripcion](#descripcion)
+- [Caracteristicas Principales](#caracteristicas-principales)
+- [Stack Tecnologico](#stack-tecnologico)
+- [Estructura del Proyecto](#estructura-del-proyecto)
+- [Requisitos Previos](#requisitos-previos)
+- [Instalacion](#instalacion)
+- [Configuracion de Variables de Entorno](#configuracion-de-variables-de-entorno)
+- [Scripts Disponibles](#scripts-disponibles)
+- [Arquitectura del Editor Visual](#arquitectura-del-editor-visual)
+- [Despliegue](#despliegue)
+- [Roadmap](#roadmap)
+- [Contribuir](#contribuir)
+- [Licencia](#licencia)
 
-### 🎯 Características principales
+---
 
-| Característica | Descripción |
+## Descripcion
+
+**DiscordVisualBot** es una plataforma **no-code** que te permite disenar, configurar y desplegar bots de Discord completos usando un **editor visual basado en nodos**. En lugar de programar comandos manualmente, simplemente arrastras y conectas bloques de logica como si fuera un diagrama de flujo.
+
+El proyecto esta construido con **React 19**, **TypeScript**, **Tailwind CSS v4** y **Firebase**, utilizando **React Flow** para el editor visual de nodos y **Discord.js v14** para la integracion con la API de Discord.
+
+---
+
+## Caracteristicas Principales
+
+| Caracteristica | Descripcion |
 |----------------|-------------|
-| 🧩 **Editor Visual** | Interfaz drag-and-drop con React Flow para crear lógica de bot sin código |
-| 🎵 **Sistema de Música** | Reproductor completo con Discord Player 7 (play, skip, stop, colas) |
-| 🎫 **Tickets de Soporte** | Sistema completo con transcripciones, estados visuales y encuestas DM |
-| 🗣️ **Asistente de Voz IA** | Integración con Gemini Live para conversaciones por voz en canales de Discord |
-| 🔨 **Moderación** | Timeout, kick, ban, gestión de roles y canales |
-| 📊 **Auditoría** | Portal web protegido para revisar transcripts de tickets |
-| 🔐 **Autenticación** | Login seguro con Firebase Auth |
-| ⚡ **Despliegue Instantáneo** | Un clic para encender tu bot en Discord |
+| :jigsaw: **Editor Visual** | Interfaz drag-and-drop con React Flow para crear logica de bot sin codigo |
+| :musical_note: **Sistema de Musica** | Reproductor completo con Discord Player 7 (play, skip, stop, colas) |
+| :ticket: **Tickets de Soporte** | Sistema completo con transcripciones, estados visuales y encuestas DM |
+| :speaking_head: **Asistente de Voz IA** | Integracion con Gemini Live para conversaciones por voz en canales de Discord |
+| :hammer: **Moderacion** | Timeout, kick, ban, gestion de roles y canales |
+| :bar_chart: **Auditoria** | Portal web protegido para revisar transcripts de tickets |
+| :closed_lock_with_key: **Autenticacion** | Login seguro con Firebase Auth |
+| :zap: **Despliegue Instantaneo** | Un clic para encender tu bot en Discord |
 
 ---
 
-## 🖼️ Capturas de pantalla
+## Stack Tecnologico
 
-### Editor Visual de Flujos
-![Editor Visual](https://i.ibb.co/DPMwB89J/Screenshot-2026-04-24-15-47-04-359-com-android-chrome-edit.jpg)
-*Arrastra nodos, conecta la lógica y personaliza cada acción del bot*
+### Frontend
+- **React 19** - Framework UI moderno con Concurrent Features
+- **TypeScript ~5.8** - Tipado estatico para codigo robusto
+- **Tailwind CSS v4** - Utilidades CSS de ultima generacion con `@tailwindcss/vite`
+- **Vite v6** - Bundler ultrarrapido para desarrollo y produccion
+- **React Flow (@xyflow/react) v12** - Editor visual de nodos drag-and-drop
+- **Motion v12** - Animaciones fluidas y transiciones
+- **shadcn/ui v4** - Componentes UI accesibles y personalizables
+- **Lucide React** - Iconografia vectorial moderna
 
-### Panel de Control
-![Dashboard](https://i.ibb.co/cSw0hB29/Screenshot-2026-04-24-15-47-38-645-com-android-chrome-edit.jpg)
-*Gestiona tus módulos, monitorea el estado del bot y controla el AI Voice Bridge*
+### Backend & Servidor
+- **Express v4** - Servidor web para API y runtime del bot
+- **tsx** - Ejecucion de TypeScript sin compilacion previa
+- **CORS** - Habilitacion de peticiones cruzadas
 
-### Sistema de Tickets
-![Tickets](https://i.ibb.co/Pz4PpFLC/Screenshot-2026-04-24-15-49-35-896-com-android-chrome-edit.jpg)
-*Transcripciones automáticas, encuestas de satisfacción y portal de auditoría*
+### Integracion Discord
+- **Discord.js v14.26** - Libreria oficial para bots de Discord
+- **Discord Player v7.2** - Framework completo para reproduccion de musica
+- **@discordjs/voice v0.19** - Conexiones de voz en canales
+- **@discord-player/extractor v7.2** - Extractores de audio de multiples fuentes
+- **ffmpeg-static** - Codificacion de audio para streaming
+- **opusscript & prism-media** - Codecs de audio para Discord
 
-### Constructor de Embeds
-![Embeds](https://i.ibb.co/JRh9SKsm/Screenshot-2026-04-24-15-51-17-589-com-android-chrome-edit.jpg)
-*Crea mensajes embed ricos con previsualización en tiempo real*
+### Inteligencia Artificial
+- **@google/genai v1.29** - API de Gemini para el asistente de voz IA
+
+### Base de Datos & Autenticacion
+- **Firebase v12** - Autenticacion, Firestore Database y hosting
+- **Firestore Rules** - Seguridad granular en la base de datos
+
+### Comunicacion en Tiempo Real
+- **Socket.IO v4.8** - WebSockets bidireccionales para actualizaciones en vivo
+
+### Tipografia
+- **Geist (variable font)** - Fuente moderna de Vercel
 
 ---
 
-## 🚀 Demo Rápida
+## Estructura del Proyecto
+
+```
+DiscordVisualBot/
+|-- components/
+|   |-- ui/                       # Componentes shadcn/ui base
+|   |-- nodes/
+|   |   |-- CustomNodes.tsx       # Nodos personalizados del editor visual
+|   |-- Loading.tsx               # Componente de carga
+|-- lib/
+|   |-- utils.ts                  # Utilidades (cn, etc.)
+|-- src/
+|   |-- components/               # Componentes reutilizables
+|   |-- contexts/                 # Contextos de React (estado global)
+|   |-- data/                     # Datos estaticos y configuraciones
+|   |-- pages/
+|   |   |-- Landing.tsx           # Pagina de inicio / landing
+|   |   |-- Dashboard.tsx         # Panel principal del bot
+|   |   |-- Editor.tsx            # Editor visual de flujos
+|   |   |-- MusicConfig.tsx       # Configuracion del sistema de musica
+|   |   |-- TranscriptPortal.tsx  # Portal de auditoria de tickets
+|   |-- App.tsx                   # Router principal y layout
+|   |-- constants.ts              # Constantes de la aplicacion
+|   |-- firebase.ts               # Configuracion e inicializacion de Firebase
+|   |-- index.css                 # Estilos globales con Tailwind
+|   |-- main.tsx                  # Punto de entrada de React
+|   |-- types.ts                  # Definiciones de tipos TypeScript
+|-- .env.example                  # Variables de entorno de ejemplo
+|-- components.json               # Configuracion de shadcn/ui
+|-- firebase-applet-config.json   # Configuracion del applet de Firebase
+|-- firebase-blueprint.json       # Blueprint de la infraestructura Firebase
+|-- firestore.rules               # Reglas de seguridad de Firestore
+|-- index.html                    # HTML de entrada
+|-- metadata.json                 # Metadatos del proyecto
+|-- package.json                  # Dependencias y scripts
+|-- server.ts                     # Servidor Express + runtime del bot
+|-- tsconfig.json                 # Configuracion de TypeScript
+|-- vite.config.ts                # Configuracion de Vite
+```
+
+---
+
+## Requisitos Previos
+
+- **Node.js** >= 20.0.0
+- **npm** >= 10.0.0
+- Cuenta en **Google AI Studio** (para Gemini API)
+- Cuenta en **Firebase** (para Auth y Firestore)
+- Aplicacion de bot en **[Discord Developer Portal](https://discord.com/developers/applications)**
+
+---
+
+## Instalacion
+
+### 1. Clonar el repositorio
 
 ```bash
-# 1. Clonar el repositorio
 git clone https://github.com/flekiwey-droid/DiscordVisualBot.git
 cd DiscordVisualBot
+```
 
-# 2. Instalar dependencias
+### 2. Instalar dependencias
+
+```bash
 npm install
+```
 
-# 3. Configurar variables de entorno
-cp .env.example .env.local
-# Editar .env.local con tus credenciales
+### 3. Configurar variables de entorno
 
-# 4. Iniciar servidor de desarrollo
+Copia el archivo de ejemplo y rellena tus credenciales:
+
+```bash
+cp .env.example .env
+```
+
+### 4. Iniciar en modo desarrollo
+
+```bash
 npm run dev
+```
+
+La aplicacion estara disponible en `http://localhost:3000`.
+
+---
+
+## Configuracion de Variables de Entorno
+
+Crea un archivo `.env` en la raiz del proyecto con las siguientes variables:
+
+| Variable | Descripcion | Obligatorio |
+|----------|-------------|-------------|
+| `GEMINI_API_KEY` | Clave de API de Google Gemini para el asistente IA | Si |
+| `APP_URL` | URL donde se aloja la aplicacion (usada para OAuth y callbacks) | Si |
+
+> :bulb: Si usas **Google AI Studio**, estas variables se inyectan automaticamente en tiempo de ejecucion desde los secretos del panel de AI Studio.
+
+---
+
+## Scripts Disponibles
+
+| Script | Descripcion |
+|--------|-------------|
+| `npm run dev` | Inicia el servidor de desarrollo con recarga en caliente |
+| `npm start` | Inicia el servidor en modo produccion |
+| `npm run build` | Compila la aplicacion para produccion en `/dist` |
+| `npm run preview` | Previsualiza la build de produccion localmente |
+| `npm run clean` | Elimina la carpeta `/dist` |
+| `npm run lint` | Ejecuta el chequeo de tipos de TypeScript sin emitir archivos |
+
+---
+
+## Arquitectura del Editor Visual
+
+El editor visual esta construido sobre **React Flow** y soporta cuatro tipos de nodos:
+
+| Tipo | Proposito |
+|------|-----------|
+| **trigger** | Eventos que inician un flujo (ej: mensaje recibido, usuario se une) |
+| **action** | Acciones que ejecuta el bot (ej: enviar mensaje, asignar rol) |
+| **logic** | Condiciones y ramificaciones (ej: si/entonces, bucles) |
+| **variable** | Almacenamiento y manipulacion de datos temporales |
+
+Cada nodo contiene:
+- `label`: Nombre visible
+- `type`: Categoria del nodo
+- `description`: Descripcion de su funcion
+- `config`: Parametros configurables
+- `icon`: Icono representativo
+
+### Flujo de Datos
+
+```
+[Trigger Node] --> [Logic Node] --> [Action Node]
+                      |
+                      +--> [Variable Node] --> [Action Node]
+```
+
+---
+
+## Despliegue
+
+### Google AI Studio (Recomendado)
+
+Este proyecto fue generado desde la plantilla de **Google AI Studio**. Para desplegar:
+
+1. Conecta tu repositorio a AI Studio
+2. Configura los secretos en el panel de AI Studio:
+   - `GEMINI_API_KEY`
+   - `APP_URL`
+3. El despliegue en **Cloud Run** es automatico
+
+### Manual (Cloud Run / VPS)
+
+```bash
+# Build de produccion
+npm run build
+
+# Iniciar servidor
+npm start
+```
+
+El servidor escucha en el puerto configurado por la variable de entorno `PORT` (por defecto 3000).
+
+---
+
+## Roadmap
+
+- [ ] Exportacion de flujos a codigo JavaScript
+- [ ] Biblioteca de plantillas predefinidas
+- [ ] Sistema de plugins y nodos personalizados
+- [ ] Dashboard analitico con metricas del bot
+- [ ] Soporte para multiples bots simultaneos
+- [ ] Integracion con webhooks externos
+- [ ] Modulo de economia/currency
+- [ ] Sistema de niveles y experiencia (XP)
+
+---
+
+## Contribuir
+
+Las contribuciones son bienvenidas. Para contribuir:
+
+1. Haz fork del repositorio
+2. Crea una rama feature (`git checkout -b feature/nueva-caracteristica`)
+3. Commit tus cambios (`git commit -am 'Add: nueva caracteristica'`)
+4. Push a la rama (`git push origin feature/nueva-caracteristica`)
+5. Abre un Pull Request
+
+Por favor, asegurate de seguir las guias de contribucion y de que tu codigo pase el linter antes de enviarlo.
+
+---
+
+## Licencia
+
+Este proyecto esta licenciado bajo la **Licencia MIT** - ver el archivo [LICENSE](LICENSE) para mas detalles.
+
+---
+
+<p align="center">
+  Creado con :heart: por <a href="https://github.com/flekiwey-droid">@flekiwey-droid</a>
+</p>
